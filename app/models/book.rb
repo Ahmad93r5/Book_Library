@@ -20,4 +20,6 @@ class Book < ApplicationRecord
    validates :available, 
              presence: true
 
+             belongs_to :category
+
 end
