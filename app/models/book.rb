@@ -1,25 +1,23 @@
 class Book < ApplicationRecord
-
-  validates :title, 
+  validates :title,
              presence: true,
-             length: {minimum: 2},
-             uniqueness: true
-  
-  validates :author, 
-             presence: true,
-             length: {minimum: 3},
+             length: { minimum: 2 },
              uniqueness: true
 
-   validates :price, 
+  validates :author,
              presence: true,
-             numericality: {greater_than: 0}
+             length: { minimum: 3 },
+             uniqueness: true
 
-   validates :published_year, 
+   validates :price,
+             presence: true,
+             numericality: { greater_than: 0 }
+
+   validates :published_year,
              presence: true
 
-   validates :available, 
+   validates :available,
              presence: true
 
              belongs_to :category
-
 end
