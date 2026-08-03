@@ -6,17 +6,18 @@ class BooksController < ApplicationController
       render json: books
   end
 
-   #Get By ID
+  #  Get By ID
   def show
     book = Book.find(params[:id])
 
       render json: book
   end
-  #Get By NAME
+
+ #   Get By NAME
  def show_by_name
   book = Book.find_by(title: params[:name])
   render json: book
-end
+ end
 
   # CREATE NEW BOOK
   def create
