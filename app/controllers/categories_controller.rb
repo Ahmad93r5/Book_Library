@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
   # GET ALL CATEGORIES
   def index
-    categories = Category.all
+    categories = Category.order(id: :asc)
 
       render json: categories, status: :ok
   end

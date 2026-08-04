@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
   # GET ALL BOOKS
   def index
-    books = Book.all
+    books = Book.order(id: :asc)
 
       render json: books
   end
@@ -15,7 +15,7 @@ class BooksController < ApplicationController
 
  #   Get By NAME
  def show_by_name
-  book = Book.find_by(title: params[:name])
+  book = Book.find_by!(title: params[:name])
   render json: book
  end
 
